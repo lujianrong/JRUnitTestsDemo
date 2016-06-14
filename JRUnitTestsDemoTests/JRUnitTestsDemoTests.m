@@ -16,24 +16,43 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    /**
+     *  每个 test方法执行之前调用
+     */
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    /**
+     *  每个 test 方法执行之后调用
+     */
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    /**
+     *  命名为 Examp 的测试方法
+     */
 }
 
 - (void)testPerformanceExample {
-    // This is an example of a performance test case.
+    /**
+     *  主要检测代码的执行性能
+     */
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+       
     }];
+}
+/**
+ 自定义测试方法必须以test方法名开头(testXXX)，例如上面的testExample
+ 
+ 自定义方法必须为void返回类型
+ */
+- (void)testFloatEqual {
+    NSLog(@"\n 这是自定义的测试方法");
+    float a = 100.00;
+    XCTAssertEqual(a, 100, @"不相等");
 }
 
 @end
